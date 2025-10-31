@@ -1,3 +1,26 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int start() //aka le prog fait avec les premières connaissances du livres
+{
+    printf("hello world \n");
+    int a = 5;
+    double b = 5.6456845 ;
+
+    printf("%d \t" "%f \n", a, b);
+    printf("%f \t" "%d \n", b, a);
+
+    scanf("%i", &a);
+    scanf("%lf", &b);
+    rewind(stdin);
+
+    printf("%d \t" "%f \n", a, b);
+    printf("%f \t" "%d \n", b, a); 
+    printf("octets de a=%ld ; octets de b=%ld \n", sizeof(a),sizeof(b));
+    printf("Les adresses mémoires de a et b sont, respectivements, %p et %p \n", &a, &b);
+    return 0;
+}
+
 
 void dino()
 {
@@ -79,3 +102,72 @@ void ch2_6_ex4()
 }
 
 //Exercice 5 :
+void ch2_6_ex5()
+{
+    char mot[] = "Trololololol";
+    unsigned int clef = 0;
+    scanf("%i", &clef);
+    if (clef > 127)
+    {
+        int compteur = 0;
+        while (clef > 127)
+        {
+            clef = clef/2 ;
+            compteur++;
+        }
+        printf("Clef de cryptage trop grande, le programme a modifié %i fois la clef pour générer la nouvelle clef %i. ", compteur, clef);
+    }
+    else
+    {
+        printf("Clef de crypstage compatible. ");
+    }
+    printf("Le mot après cryptage est :");
+    int i = 0;
+    while (mot[i] != '\0')
+    {
+        putchar(mot[i]);
+        i++;
+    }
+    printf("\n");
+}
+
+//Exercice 6 :
+void ch2_6_ex6()
+{
+    int a = 0, b = 1, c = 2, d = 3;
+    printf("%p\n", &a);
+    getchar();
+    printf("%p\n", &b);
+    getchar();
+    printf("%p\n", &c);
+    getchar();
+    printf("%p\n", &d);
+}
+
+//Exercice 7 :
+void ch2_6_ex7()
+{
+    int a ; //4o (64bits)
+    double b ; //8o
+    float c ; //4o
+    short d ; //2o
+    char e ; //1o
+
+    printf("Entrez la variable int a :\n");
+    scanf("%i", &a);
+    printf("Entrez la variable double b :\n");
+    scanf("%lf", &b);
+    printf("Entrez la variable float c :\n");
+    scanf("%f", &c);
+    printf("Entrez la variable short d :\n");
+    scanf("%hd", &d);
+    printf("Entrez la variable char e :\n");
+    rewind(stdin);
+    scanf(" %c", &e);       //ajouter un espace devant le %c pour que le programme n'absorbe pas le Entrer de validation du précédent scanf
+    printf("La variable char e de valeur %c, est stockée sur 1 octet à l'adresse mémoire %p\n", e, &e);
+    printf("La variable short d de valeur %hd, est stockée sur 2 octets à l'adresse mémoire %p\n", d, &d);
+    printf("Les variables int a de valeur %c et float c %f, sont stockée sur 4 octets aux adresses mémoires %p et %p\n", a, c, &a, &c);
+    printf("La variable double b de valeur %d, est stockée sur 8 octets à l'adresse mémoire %p\n", d, &d);
+}
+
+//Exercice 8 :

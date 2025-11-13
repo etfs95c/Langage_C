@@ -253,3 +253,38 @@ void ch2_6_ex9()
 }
 
 //Exercice 10 :
+void ch2_6_ex10()
+{
+    int v1 = 0, v2 = 0;
+    printf("Entrez la valeur de V1 : ");
+    scanf("%i", &v1);
+    printf("Entrez la valeur de V2 : ");
+    scanf("%i", &v2);
+    int i1 = v1, i2 = v2;
+    v2 = i1;
+    v1 = i2;
+    printf("Les valeurs de V1 et V2 étaient %i et %i. Elles sont devenues %i et %i.\n", i1, i2, v1, v2);
+}
+
+//Exercice 11 :
+void ch2_6_ex11()
+{
+    int v1 = 0, v2 = 0, v3 = 0, v4 = 0, v5 = 0;
+    printf("Entrez la valeur de V1 : ");
+    scanf("%i", &v1);
+    printf("Entrez la valeur de V2 : ");
+    scanf("%i", &v2);
+    printf("Entrez la valeur de V3 : ");
+    scanf("%i", &v3);
+    printf("Entrez la valeur de V4 : ");
+    scanf("%i", &v4);
+    printf("Entrez la valeur de V5 : ");
+    scanf("%i", &v5);
+    int i1 = v1, i2 = v2, i3 = v3, i4 = v4, i5 = v5;
+    v1 = i2;
+    v2 = i3;
+    v3 = i4;
+    v4 = i5;
+    v5 = i1;
+    printf("Les valeurs étaient %i, %i, %i, %i, %i et sont devenues %i, %i, %i, %i, %i.\n", i1, i2, i3, i4, i5, v1, v2, v3, v4, v5);
+}

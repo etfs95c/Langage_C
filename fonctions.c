@@ -21,6 +21,19 @@ int start() //aka le prog fait avec les premières connaissances du livres
     return 0;
 }
 
+void tableau_ANSI()
+{
+    int row, col, n;
+
+    for (row = 0; row < 11; row++) {
+        for (col = 0; col < 10; col++) {
+            n = 10 * row + col;
+            if (n > 109) break;
+            printf("\033[%dm %3d\033[m", n, n);
+        }
+        printf("\n");
+    }
+}
 
 void dino()
 {
@@ -171,3 +184,72 @@ void ch2_6_ex7()
 }
 
 //Exercice 8 :
+void ch2_6_ex8()
+{
+    int ncommand;
+    printf("Entrez le numéro de la commande que vous voulez exécuter : ");
+    scanf("%i", &ncommand);
+    if (ncommand >= 1 & ncommand <= 5)
+    {
+        printf("Vous voulez éxécuter la commande : %i\n", ncommand);
+    }
+    else
+    {
+        printf("La commande que vous voulez éxécuter n'existe pas\n");
+    }
+}
+
+//Exercice 9 :
+void ch2_6_ex9()
+{
+    int l = 1, h = 1, n = 1;
+    char go = 'n';
+    while (go == 'n'|| go == 'N')
+    {
+        rewind(stdin);
+        printf("Entrez la largeur du dessin : ");
+        scanf("%i", &l);
+        printf("\nEntrez la hauteur du dessin : ");
+        scanf("%i", &h);
+        printf("\nEntrez le nombre de caractère utilisés dans le dessin : ");
+        scanf("%i", &n);
+        
+        printf("Vous avez paramétrer un dessin de taille %ix%i avec %i caractère(s). Est-ce correcte ?\n(Oui Y|Non N)", l, h, n);
+        scanf(" %c", &go);
+    }
+
+    char tableDeCaractere[n];
+    int i = 0;
+    int a = 1;
+    while (i != n)
+    {
+        printf("Entrez le caractère n°%i\n", a);
+        scanf(" %c", &tableDeCaractere[i]);
+        i++;
+        a++;
+        printf("\n");
+    }
+    
+    int n1 = n-1;
+    while (h != 0)
+    {
+        int l1 = l;
+        while (l1 != 0)
+        {
+            printf("%c", tableDeCaractere[n1]);
+            l1--;
+            if (n1 <= 0)
+            {
+                n1 = n-1;
+            }
+            else
+            {
+                n1--;
+            }
+        }
+        printf("\n");
+        h--;
+    }
+}
+
+//Exercice 10 :

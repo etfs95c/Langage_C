@@ -288,3 +288,155 @@ void ch2_6_ex11()
     v5 = i1;
     printf("Les valeurs étaient %i, %i, %i, %i, %i et sont devenues %i, %i, %i, %i, %i.\n", i1, i2, i3, i4, i5, v1, v2, v3, v4, v5);
 }
+
+//Chapitre 3.4 "Mise en pratrique opérations arithmétiques, cast" :
+//Exercice 3 :
+void ch3_4_ex3()
+{
+    int a = 0;
+    printf("Entrez un nombre entier :\n");
+    scanf("%i", &a);
+    float demi = (float)a/2;
+    int inverse = a*-1;
+    printf("Pour le nombre entier %i l'a moitié est %f et l'inverse est %i \n", a, demi, inverse);
+}
+
+//Exercice 4 :
+void ch3_4_ex4()
+{
+    float taux_Euro_Franc = 6.55957;
+    float valeur = 0;
+    printf("Entrez la somme à convertir :\n");
+    scanf("%f", &valeur);
+    printf("\n1 pour Euro vers Franc, 2 pour Franc vers Euro\n");
+    short type = 0;
+    scanf("%hd", &type);
+    float valeur2 = 0;
+    if (type == 1)
+    {
+        valeur2 = valeur * taux_Euro_Franc;
+        printf("\nVos %f Euro font %f Franc\n", valeur, valeur2);
+    }
+    else if (type == 2)
+    {
+        valeur2 = valeur / taux_Euro_Franc;
+        printf("\nVos %f Franc font %f Euro\n", valeur, valeur2);
+    }
+    else
+    {
+        printf("Erreur sur le sens de conversion, vérifiez votre entrée puis réesayez\n");
+    }
+}
+
+//Exercice 5 :
+void ch3_4_ex5()
+{
+    float valeur = 0;
+    printf("Entrez la Température à convertir :\n");
+    scanf("%f", &valeur);
+    printf("\n1 pour °C vers °F, 2 pour °F vers °C\n");
+    short type = 0;
+    scanf("%hd", &type);
+    float valeur2 = 0;
+    if (type == 1)
+    {
+        valeur2 = ((9.0*valeur)/5)+32;
+        printf("\nVos %f °C font %f °F\n", valeur, valeur2);
+    }
+    else if (type == 2)
+    {
+        valeur2 = (5.0/9.0)*(valeur-32.0);
+        printf("\nVos %f °F font %f °C\n", valeur, valeur2);
+    }
+    else
+    {
+        printf("Erreur sur le sens de conversion, vérifiez votre entrée puis réesayez\n");
+    }
+}
+
+//Exercice 6 :
+void ch3_4_ex6()
+{
+    int a = 10, b = 50;
+    int c = a/b;
+    printf("int par int rangé dans un int %d\n", c);
+    float f = (float)a/(float)b;
+    printf("int par int rangé dans un float %f\n", f);
+    float f2= (float)a/f;
+    printf("int par un float rangé dans un float %f ou %d\n", f2, f2);
+}
+
+//Exercice 7 :
+void ch3_4_ex7()
+{
+    float prix = 0;
+    printf("Entrez le prix de l'ordinateur :\n");
+    scanf("%f", &prix);
+    float prix_redu = prix*0.9;
+    printf("Le prix après réduction est %f\n", prix_redu);
+}
+
+//Exercice 8 :
+void ch3_4_ex8()
+{
+    printf("Entrez la valeur de x :\n");
+    float x = 0;
+    scanf("%f", &x);
+    float f = ((2*x)+3)*((3*(x*x))+2);
+    printf("f(%f)=%f\n", x, f);
+}
+
+//Exercice 9 :
+void ch3_4_ex9()
+{
+    int a = 0;
+    printf("Entrez votre nombre\n");
+    scanf("%i", &a);
+    if (a%2 ==0)
+    {
+        printf("Est pair\n");
+    }
+    else
+    {
+        printf("Est impair\n");
+    }
+}
+
+//Exercice 10 :
+void ch3_4_ex10()
+{
+    int a = 31345;
+    int b = a%10;
+    a = a-b;
+    b = (a%100)/10;
+    printf("%i\n", b);
+    b = (a%1000)/100;
+    printf("%i\n", b);
+    b = (a%10000)/1000;
+    printf("%i\n", b);
+}
+
+//Exercice 11 :
+void ch3_4_ex11()
+{
+    printf("Entrez l'entier à arrondir\n");
+    double i = 0;
+    scanf("%lf", &i);
+    i = i*100.0;
+    i = (int)i/100.0;
+    printf("%f\n", i);
+}
+
+//Exercice 12 :
+void ch3_4_ex12()
+{
+    int i = 0;
+    printf("Entrez la valeur de i\n");
+    scanf("%i", &i);
+    int ipp = i;
+    ipp++;
+    int ppi = i;
+    ++ppi;
+    printf("i = %i , i++ = %i , ++i = %i\n", i, ipp, ppi);
+}
+

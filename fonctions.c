@@ -440,3 +440,53 @@ void ch3_4_ex12()
     printf("i = %i , i++ = %i , ++i = %i\n", i, ipp, ppi);
 }
 
+//Chapitre 3.6 "Mise en pratrique : opérations et nombre aléatoire" :
+//Exercice 1 :
+void ch3_6_ex1()
+{
+    srand(time(NULL));
+    int result = rand()%2;
+    if (result == 0)
+    {
+        printf("Face perdu !\n");
+    }
+    else
+    {
+        printf("Pile gagné !\n");
+    }
+}
+
+//Exercice 2 :
+void ch3_6_ex2()
+{
+    srand(time(NULL));
+    int result = rand()%(12-2)+2;
+    printf("Résultat ! %i !\n", result);
+}
+
+//Exercice 3 :
+void ch3_6_ex3()
+{
+    printf("Entrez le seuil haut :\n");
+    int sh = 0, sb = 0;
+    scanf("%i", &sh);
+    printf("Entrez le seuil bas :\n");
+    scanf("%i", &sb);
+    srand(time(NULL));
+    int a = rand();
+    srand(time(NULL));
+    int b = rand()%(367);
+    int c = rand()%(sh);
+    srand(time(NULL));
+    int d = rand()%(7354-678)+678;
+    int e = rand()%(sh-sb)+sb;
+    srand(time(NULL));
+    int f = rand()%2;
+    srand(time(NULL));
+    float g = rand()%(50);
+    srand(time(NULL));
+    g = g + ((float)(rand()%(100-1)+1)/100);
+    printf("%i\t%i\t%i\t%i\t%i\t%i\t%f\n", a, b, c, d, e, f, g);
+}
+
+//

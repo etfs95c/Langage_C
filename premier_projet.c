@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <time.h>
+#include <stdlib.h>
 
 /*
-void ch3_4_ex13()
+void ch3_6_ex3()
 {
     
 }

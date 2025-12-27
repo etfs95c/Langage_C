@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /*
-void ch3_6_ex3()
+void ch4_2_ex10()
 {
     
 }

@@ -489,4 +489,299 @@ void ch3_6_ex3()
     printf("%i\t%i\t%i\t%i\t%i\t%i\t%f\n", a, b, c, d, e, f, g);
 }
 
-//
+//Chapitre 4.1 "Mise en pratrique : opérateurs de comparaison et NON" :
+//Exercice 1 :
+void ch4_1_ex1()
+{
+    int a, b, c;
+    srand(5);
+    a=rand()%256;
+    b=rand()%256;
+    c=rand()%256;
+
+    printf("%d", a < 128);
+    printf("%d", b < 128);
+    printf("%d", c == 223);
+    printf("%d", a < b >= rand()%2 ==1);
+    printf("%d", a = b !=c + rand()%50);
+    printf("%d", b= a==c);
+    printf("%d", c = rand()%10 < rand()%10 >= rand()%10 != rand()%10 ==rand()%10);
+}
+
+//Chapitre 4.2 "Mise en pratrique : les sauts conditionnels" :
+//Exercice 1 :
+void ch4_2_ex1()
+{
+    int a = 0, b= 0;
+    printf("Entrez la valeur de a :\n");
+    scanf("%i", &a);
+    printf("Entrez la valeur de b :\n");
+    scanf("%i", &b);
+    if (a<b)
+    {
+        printf("\n%i est plus grand que %i\n", b, a);
+    }
+    else if (b<a)
+    {
+        printf("\n%i est plus grand que %i\n", a, b);
+    }
+    else
+    {
+        printf("\nLes deux valeurs sont égales\n");
+    }
+}
+
+//Exercice 2 :
+void ch4_2_ex2()
+{
+    int a = 0, b= 0;
+    printf("Entrez la valeur de a :\n");
+    scanf("%i", &a);
+    printf("Entrez la valeur de b :\n");
+    scanf("%i", &b);
+    if (a<b)
+    {
+        printf("\n%i,%i\n", a, b);
+    }
+    else if (b<a)
+    {
+        printf("\n%i,%i\n", b, a);
+    }
+    else
+    {
+        printf("\n%i,%i\n", a, b);
+    }
+}
+
+//Exercice 3 :
+void ch4_2_ex3()
+{
+    printf("Entrer votre nombre Entier :\n");
+    int a = 0;
+    scanf("%i", &a);
+    if ((a%2) ==0)
+    {
+        printf("Est pair\n");
+    }
+    else
+    {
+        printf("Est impair\n");
+    }
+}
+
+//Exercice 4 :
+void ch4_2_ex4()
+{
+    int a = 0;
+    printf("0 pour a = 0, 1 pour a = 100 :\n");
+    scanf("%i", &a);
+    if (a != 0)
+    {
+        a = 100;
+    }
+    
+    printf("Séquence 1 : ");
+    if (a < 50)
+    {
+        printf("1");
+    }
+    if (a < 40)
+    {
+        printf("2");
+    }
+    if (a < 30)
+    {
+        printf("3");
+    }
+    if (a < 20)
+    {
+        printf("4");
+    }
+    if (a < 10)
+    {
+        printf("5");
+    }
+
+    printf("\nSéquence 2 : ");
+    if (a < 50)
+        printf("1");
+    else
+        printf("2");
+    if (a < 30)
+        printf("3");
+    else
+        printf("4");
+    
+    printf("\nSéquence 3 : ");
+    if (a < 10)
+    {
+        printf("1");
+    }
+    else if (a < 20)
+    {
+        printf("2");
+    }
+    else if (a < 30)
+    {
+        printf("3");
+    }
+    else if (a < 40)
+    {
+        printf("4");
+    }
+    else if (a < 50)
+    {
+        printf("5");
+    }
+    else
+    {
+        printf("0");
+    }
+    printf("\n");
+}
+
+//Exercice 5 :
+void ch4_2_ex5()
+{
+    printf("Pile 1, Face 0 :\n");
+    int a = 0;
+    scanf("%i", &a);
+    srand(time(NULL));
+    int b = rand()%2;
+    printf("%i", b);
+    if (b == 0)
+    {
+        printf("\nFace ! ");
+        if (a == b)
+        {
+            printf("Gagné !\n");
+        }
+        else
+        {
+            printf("Perdu !\n");
+        }
+        
+    }
+    if (b == 1)
+    {
+        printf("\nPile ! ");
+        if (a == b)
+        {
+            printf("Gagné !\n");
+        }
+        else
+        {
+            printf("Perdu !\n");
+        }
+        
+    }
+}
+
+//Exercice 6 :
+void ch4_2_ex6()
+{
+    printf("Le nombre est compris entre 1 et 10, quel est votre estimation ?\n");
+    int a = 0;
+    scanf("%i", &a);
+    srand(time(NULL));
+    int b = (rand()%(10-1))+1;
+    if (a == b)
+    {
+        printf("Gagné !\n");
+    }
+    else if (a < b)
+    {
+        a = b-a;
+        printf("Votre nombre est plus petit de %i\n", a);
+    }
+    else if (a > b)
+    {
+        a = a-b;
+        printf("Votre nombre est plus grand de %i\n", a);
+    }
+    else
+    {
+        printf("Erreur\n");
+    }
+}
+
+//Exercice 8 :
+void ch4_2_ex8()
+{
+    rewind(stdin);
+    char a = '+';
+    printf("Premier signe (+ ou -) ?\n");
+    scanf(" %c", &a);
+    char b = '+';
+    printf("Second signe (+ ou -) ?\n");
+    scanf(" %c", &b);
+
+    if (a != b)
+    {
+        printf("\nLa multiplication donne un nombre négatif (-)\n");
+    }
+    else
+    {
+        printf("\nLa multiplication donne un nombre positif (+)\n");
+    }
+}
+
+//Exercice 9 :
+void ch4_2_ex9()
+{
+    int a = 0, b = 0, c = 0;
+    printf("Entrez la première valeur :\n");
+    scanf("%i", &a);
+    printf("Entrez la seconde valeur :\n");
+    scanf("%i", &b);
+    printf("Entrez la troisième valeur :\n");
+    scanf("%i", &c);
+    if (a < b)
+    {
+        if (b < c)
+        {
+            printf("%i est plus grand que %i et %i\n", c, b, a);
+        }
+        else
+        {
+            printf("%i est plus grand que %i et %i\n", b, c, a);
+        }
+        
+    }
+    else
+    {
+        if (a < c)
+        {
+            printf("%i est plus grand que %i et %i\n", c, a, b);
+        }
+        else
+        {
+            printf("%i est plus grand que %i et %i\n", a, c, b);
+        }
+    }
+}
+
+//Exercice 10 :
+void ch4_2_ex10()
+{
+    float prix = 0;
+    char type = 'A';
+    printf("Quel est le prix du produit ?\n");
+    scanf("%f", &prix);
+    printf("Quel est le type de produit (A ou B) ?\n)");
+    scanf(" %c", &type);
+    if (type == 'b')
+    {
+        type = 'B';
+    }
+    
+    if (type == 'B')
+    {
+        printf("Le produit a un TVA de 20%% pour un prix final de %f\n", prix*0.20);
+    }
+    else
+    {
+        printf("Le produit a un TVA de 5,5%% pour un prix final de %f\n", prix*0.055);
+    }
+}
+

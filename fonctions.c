@@ -785,3 +785,83 @@ void ch4_2_ex10()
     }
 }
 
+// Chapitre 4.3 : "Mise en pratique : l'aiguillage switch"
+//Exercice 2 :
+void ch4_3_ex2()
+{
+    srand(time(NULL));
+    int a = rand()%2;
+    switch (a)
+    {
+    case 0:
+        printf("Bonjour\n");
+        break;
+    case 1:
+        printf("Salut\n");
+        break;
+    }
+}
+
+//Exercice 3 :
+void ch4_3_ex3()
+{
+    printf("Entrez le premier nombre entier :\n");
+    int a = 0;
+    scanf("%i", &a);
+    printf("Entrez le second nombre entier :\n");
+    int b = 0;
+    scanf("%i", &b);
+    printf("Entrez 1 pour savoir si la somme est paire, 2 pour savoir si le produit est paire, 3 pour savoir si la somme est négative, ou 4 pour savoir si la multiplication est négative :\n");
+    int c = 0;
+    scanf("%i", &c);
+    switch (c)
+    {
+    case 1:
+        if ((a+b)%2==0)
+        {
+            printf("La somme est paire\n");
+        }
+        else
+        {
+            printf("La somme est impaire\n");
+        }
+        break;
+    case 2:
+        if ((a*b)%2==0)
+        {
+            printf("Le produit est paire\n");
+        }
+        else
+        {
+            printf("Le produit est impaire\n");
+        }
+        break;
+    case 3:
+        if ((a+b) < 0)
+        {
+            printf("La somme est négative\n");
+        }
+        else
+        {
+            printf("La somme est positive\n");
+        }
+        break;
+    case 4:
+        if ((a*b) < 0)
+        {
+            printf("Le produit est négative\n");
+        }
+        else
+        {
+            printf("Le produit est positive\n");
+        }
+        break;
+    default:
+        return 1;
+        break;
+    }
+    return 0;
+}
+
+// Chapitre 4.5 : "Mise en pratique : les opérateurs logiques ET, OU"
+//Exercice 1 :

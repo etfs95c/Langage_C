@@ -4,9 +4,10 @@
 #include <stdlib.h>
 
 /*
-void ch4_5_ex1()
+void ch4_5_ex2()
 {
     
+    return 0;
 }
 */
 

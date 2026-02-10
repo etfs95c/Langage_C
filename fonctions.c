@@ -865,3 +865,26 @@ void ch4_3_ex3()
 
 // Chapitre 4.5 : "Mise en pratique : les opérateurs logiques ET, OU"
 //Exercice 1 :
+void ch4_5_ex1()
+{
+    int max = 122;
+    int min = 48;
+    int i = 0;
+    srand(time(NULL));
+    char r1 = (rand()%(max-min))+min;
+    char r2 = (rand()%(max-min))+min;
+    char r3 = (rand()%(max-min))+min;
+    printf("%c %c %c \n", r1, r2, r3);
+    if ((r1 == r3) || ((r1 + 1 == r2) && (r2 + 1 == r3)) || ((r1 - 1 == r2) && (r2 - 1 == r3)))
+    {
+        printf("Gagné !\n");
+    }
+    else
+    {
+        printf("Perdu !\n");
+        i++;
+    }
+    return 0;
+}
+
+//Exercice 2:

@@ -887,4 +887,24 @@ void ch4_5_ex1()
     return 0;
 }
 
-//Exercice 2:
+//Exercice 4:
+void ch4_5_ex4()
+{
+    int a = 0, b= 0 , c = 0, i = 1;
+    printf("Entrez la première valeur :\n");
+    scanf("%i", &a);
+    printf("Entrez la deuxième valeur :\n");
+    scanf("%i", &b);
+    printf("Entrez la troisième valeur :\n");
+    scanf("%i", &c);
+    if ((a != b) && (a !=c) && (b !=c))
+    {
+        i = 3;
+    }
+    if ((((a == b)||(a == c)) && (b !=c)) || ((b == a)||(b == c)) && (a !=c))
+    {
+        i = 2;
+    }
+    printf("Il y a %i valeur(s) distinctes\n", i);
+    return 0;
+}

@@ -887,7 +887,7 @@ void ch4_5_ex1()
     return 0;
 }
 
-//Exercice 4:
+//Exercice 4 :
 void ch4_5_ex4()
 {
     int a = 0, b= 0 , c = 0, i = 1;
@@ -908,3 +908,134 @@ void ch4_5_ex4()
     printf("Il y a %i valeur(s) distinctes\n", i);
     return 0;
 }
+
+//Exercice 5 :
+void ch4_5_ex5()
+{
+    int max_y = 480;
+    int min_y = 0;
+    int max_x = 640;
+    int min_x = 0;
+    srand(time(NULL));
+    int x = (rand()%(max_x-min_x))+min_x;
+    int y = (rand()%(max_y-min_y))+min_y;
+    if (((30 < x)&&(x < 320)) && ((240 < y)&&(y < 450)))
+    {
+        printf("z1\n");
+    }
+    else if (((320 < x)&&(x < 610)) && ((240 < y)&&(y < 450)))
+    {
+        printf("z2\n");
+    }
+    else if (((30 < x)&&(x < 320)) && ((30 < y)&&(y < 240)))
+    {
+        printf("z3\n");
+    }
+    else if (((320 < x)&&(x < 610)) && ((30 < y)&&(y < 240)))
+    {
+        printf("z4\n");
+    }
+    else
+    {
+        printf("Hors zone\n");
+    }
+    return 0;
+}
+
+//5.6. Mise en pratique : Les boucles while, do-while et for
+//Exercice 1 :
+void ch5_6_ex1()
+{
+    for (size_t i = 0; i < 255; i++)
+    {
+        char c = i;
+        printf("%c\n", c);
+    }
+    return 0;
+}
+
+//Exercice 2 :
+void ch5_6_ex2()
+{
+    for (size_t i = 0; i < 1001; i++)
+    {
+        printf("%li\n", i);
+    }
+    int a = 0;
+    for (size_t i = 0; i < 10; i++)
+    {
+        int i = 1;
+        while (i < 11)
+        {
+            printf("%i\t", a);
+            a++;
+            i++;
+        }
+        printf("\n");
+    }
+    printf("100\n");
+    printf("\nTable de Multiplication :\n\t1\t2\t3\t4\t5\t6\t7\t8\t9\n");
+    for (size_t b = 1; b < 10; b++)
+    {
+        printf("%i\t", (int)b);
+        for (size_t c = 1; c < 10; c++)
+        {
+            int d = b * c;
+            printf("%i\t",d);
+        }
+        printf("\n");
+    }
+    printf("\nTable d'Addition :\n\t1\t2\t3\t4\t5\t6\t7\t8\t9\n");
+    for (size_t b = 1; b < 10; b++)
+    {
+        printf("%i\t", (int)b);
+        for (size_t c = 1; c < 10; c++)
+        {
+            int d = b + c;
+            printf("%i\t",d);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+//Exercice 7 :
+void ch5_6_ex7()
+{
+    int largeur = 120;
+    int hauteur = 15;
+    for (size_t i = 0; i < (hauteur + 1); i++)
+    {
+        int a = 0;
+        if (i == 0 || i == hauteur)
+        {
+            while (a < (largeur + 1))
+            {
+                if (i == 0)
+                {
+                    printf("_");
+                }
+                else
+                {
+                    printf("‾");
+                }
+                a++;
+            }
+            
+        }
+        else
+        {
+            printf("|");
+            a++;
+            while (a < largeur)
+            {
+                putchar(' ');
+                a++;
+            }
+            printf("|");
+        }
+        putchar('\n');
+    }
+    return 0;
+}
+
+//Exercice 

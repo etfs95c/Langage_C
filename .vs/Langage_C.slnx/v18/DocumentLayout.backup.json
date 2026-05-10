@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Elias\\Documents\\GitHub\\Langage_C\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37B1C721-23B6-4B41-B707-DEB0DA6646F1}|Langage_C\\Langage_C.vcxproj|C:\\Users\\Elias\\Documents\\GitHub\\Langage_C\\Langage_C\\premier_projet.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{37B1C721-23B6-4B41-B707-DEB0DA6646F1}|Langage_C\\Langage_C.vcxproj|solutionrelative:Langage_C\\premier_projet.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "premier_projet.c",
+              "DocumentMoniker": "C:\\Users\\Elias\\Documents\\GitHub\\Langage_C\\Langage_C\\premier_projet.c",
+              "RelativeDocumentMoniker": "Langage_C\\premier_projet.c",
+              "ToolTip": "C:\\Users\\Elias\\Documents\\GitHub\\Langage_C\\Langage_C\\premier_projet.c",
+              "RelativeToolTip": "Langage_C\\premier_projet.c",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-05-10T14:33:14.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

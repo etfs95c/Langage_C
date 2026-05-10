@@ -1,0 +1,3 @@
+﻿  premier_projet.c
+C:\Users\Elias\Documents\GitHub\Langage_C\Langage_C\premier_projet.c(33,11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Langage_C.vcxproj -> C:\Users\Elias\Documents\GitHub\Langage_C\x64\Debug\Langage_C.exe

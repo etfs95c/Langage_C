@@ -1,4 +1,0 @@
-﻿  premier_projet.c
-C:\Users\Elias\source\repos\etfs95c\Langage_C\Langage_C\premier_projet.c(33,11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  LINK : C:\Users\Elias\source\repos\etfs95c\Langage_C\x64\Debug\Langage_C.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
-  Langage_C.vcxproj -> C:\Users\Elias\source\repos\etfs95c\Langage_C\x64\Debug\Langage_C.exe

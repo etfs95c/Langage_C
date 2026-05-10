@@ -48,9 +48,9 @@ int main()
             res = _getch();
             switch (res)
             {
-            case 72: y--;   break;
+            case 80: y--;   break;
             case 77: x++;   break;
-            case 80: y++;   break;
+            case 72: y++;   break;
             case 75: x--;   break;
             case 224:       break;
             default: fin = 1;  break;

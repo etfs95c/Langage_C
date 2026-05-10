@@ -24,4 +24,9 @@
       <Filter>Fichiers sources</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="premier_projet.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

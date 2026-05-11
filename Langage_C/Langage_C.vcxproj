@@ -129,6 +129,8 @@
   <ItemGroup>
     <None Include="fonctions.c">
       <FileType>CppCode</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DeploymentContent>
     </None>
     <ClCompile Include="premier_projet.c" />
   </ItemGroup>

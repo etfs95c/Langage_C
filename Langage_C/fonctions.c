@@ -1135,3 +1135,180 @@ int ch6_4_ex1()
 }
 
 //Exercice 2 :
+void gotoxy(int x, int y)
+{
+    COORD c;
+    c.X = x;
+    c.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+}
+
+void drawboite(ltexte, couleur, x_pos, y_pos)
+{
+    gotoxy(x_pos, y_pos);
+    ltexte = ltexte + 2;
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), couleur);
+    for (int i = 0; i < ltexte; i++)
+    {
+        putchar('-');
+    }
+    gotoxy(x_pos, y_pos - 1);
+    printf("|");
+    gotoxy(x_pos + ltexte - 1, y_pos - 1);
+    printf("|");
+    gotoxy(x_pos, y_pos - 2);
+    for (int i = 0; i < ltexte; i++)
+    {
+        putchar('-');
+    }
+}
+
+int main()
+{
+    int boucle = 0;
+    while (!boucle)
+    {
+        system("cls");
+        int x_max = 30, y_max = 15;
+        float taux_euro_franc = 6.55759;//1€ = 6.55759 francs
+        gotoxy(x_max / 2, 0);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
+        printf("Choisissez ");
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+        printf("la monnaie ");
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+        printf("de depart :");
+        drawboite(8, 7, x_max / 2, y_max / 3);
+        gotoxy((x_max / 2) + 3, (y_max / 3) - 1);
+        printf("Euro");
+        drawboite(8, 7, x_max + 8, y_max / 3);
+        gotoxy((x_max + 8) + 2, (y_max / 3) - 1);
+        printf("Franc");
+        int fin = 0;
+        int sel = 0;
+        while (!fin)
+        {
+            if (_kbhit())
+            {
+                int input;
+                input = _getch();
+                switch (input)
+                {
+                case 77: sel++;   break;
+                case 75: sel--;   break;
+                case 32:
+                {
+                    fin = 1;
+                    break;
+                }
+                case 224:       break;
+                default: fin = 1;  break;
+                }
+                if (sel < 0)
+                    sel = 1;
+                if (sel > 1)
+                    sel = 0;
+                switch (sel)
+                {
+                case 1:
+                {
+                    drawboite(8, 7, x_max + 8, y_max / 3);
+                    gotoxy((x_max + 8) + 2, (y_max / 3) - 1);
+                    printf("Franc");
+                    drawboite(8, 9, x_max / 2, y_max / 3);
+                    gotoxy((x_max / 2) + 3, (y_max / 3) - 1);
+                    printf("Euro");
+                    break;
+                }
+                case 0:
+                {
+                    drawboite(8, 12, x_max + 8, y_max / 3);
+                    gotoxy((x_max + 8) + 2, (y_max / 3) - 1);
+                    printf("Franc");
+                    drawboite(8, 7, x_max / 2, y_max / 3);
+                    gotoxy((x_max / 2) + 3, (y_max / 3) - 1);
+                    printf("Euro");
+                    break;
+                }
+                default:
+                    break;
+                }
+            }
+
+        }
+        system("cls");
+        float entrer = 0;
+        float sortie = 0;
+        gotoxy(x_max / 2, 0);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+        printf("Entrez la valeur en ");
+        switch (sel)
+        {
+        case 0:
+        {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+            printf("Franc :\n");
+            scanf_s("%f", &entrer);
+            sortie = entrer / taux_euro_franc;
+            break;
+        }
+        case 1:
+        {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
+            printf("Euro :\n");
+            scanf_s("%f", &entrer);
+            sortie = entrer * taux_euro_franc;
+            break;
+        }
+        default:
+        {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+            printf("Erreur ");
+            return 5;
+        }
+
+        }
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+        printf("La conversion en ");
+        switch (sel)
+        {
+        case 1:
+        {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+            printf("Franc");
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+            printf(" vaut : %f F", sortie);
+            break;
+        }
+        case 0:
+        {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
+            printf("Euro :\n");
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+            printf(" vaut : %f E", sortie);
+            break;
+        }
+        default:
+        {
+            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+            printf("Erreur ");
+            return 6;
+        }
+
+        }
+        printf("\n\n\n");
+        rewind(stdin);
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+        printf("Voulez-vous quitter le logiciel (O/N) ?\n");
+        char c = 'i';
+        scanf_s("%c", &c, 1);
+        if ((c == 'O') || (c == 'o'))
+        {
+            boucle = 1;
+        }
+        fin = 0;
+    }
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+    return 0;
+}

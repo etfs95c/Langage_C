@@ -5,13 +5,12 @@
 #include <conio.h>
 #include <windows.h>
 
-/*void ch6_4_ex2()
+/*void ch5_1-4_ex1()
 {
     
     return 0;
 }
 */
-
 
 int main()
 {

@@ -1312,3 +1312,65 @@ int main()
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     return 0;
 }
+
+//Exercice 3 :
+void ch6_4_ex3()
+{
+    int fin = 0;
+    while (!fin)
+    {
+        if (_kbhit())
+        {
+            int imput;
+            imput = _getch();
+            if (imput == 32)
+            {
+                fin = 1;
+                break;
+            }
+            else
+            {
+                srand(time(NULL));
+                int a = (rand() % (20 - 1)) + 1;
+                while (a > 0)
+                {
+                    printf("%c", imput);
+                    a--;
+                }
+                printf("\n");
+            }
+        }
+        printf("0\n");
+        Sleep(10);
+    }
+    return 0;
+}
+
+// Chapitre 5 : Structure
+
+void ch5_1-4_ex1()
+{
+    typedef struct {
+        int la, lo, e, type;
+    }panneau;
+    srand(time(NULL));
+    panneau p1 = {((rand() % (1000 - 20)) + 20), ((rand() % (1000 - 20)) + 20), ((rand() % (60 - 5)) + 5), (rand() % 2)};
+    switch (p1.type)
+    {
+    case 0: printf("Information sur le panneau 1 :\n\t-Largeur = %i mm\n\t-Longueur = %i mm\n\t-Epaisseur = %i mm\n\tType de bois : Pin\n", p1.la, p1.lo, p1.e); break;
+    case 1: printf("Information sur le panneau 1 :\n\t-Largeur = %i mm\n\t-Longueur = %i mm\n\t-Epaisseur = %i mm\n\tType de bois : Chene\n", p1.la, p1.lo, p1.e); break;
+    case 2: printf("Information sur le panneau 1 :\n\t-Largeur = %i mm\n\t-Longueur = %i mm\n\t-Epaisseur = %i mm\n\tType de bois : Hetre\n", p1.la, p1.lo, p1.e); break;
+    default:
+        break;
+    }
+    panneau p2 = { ((rand() % (1000 - 20)) + 20), ((rand() % (1000 - 20)) + 20), ((rand() % (60 - 5)) + 5), (rand() % 2) };
+    switch (p2.type)
+    {
+    case 0: printf("Information sur le panneau 2 :\n\t-Largeur = %i mm\n\t-Longueur = %i mm\n\t-Epaisseur = %i mm\n\tType de bois : Pin\n", p1.la, p1.lo, p1.e); break;
+    case 1: printf("Information sur le panneau 2 :\n\t-Largeur = %i mm\n\t-Longueur = %i mm\n\t-Epaisseur = %i mm\n\tType de bois : Chene\n", p1.la, p1.lo, p1.e); break;
+    case 2: printf("Information sur le panneau 2 :\n\t-Largeur = %i mm\n\t-Longueur = %i mm\n\t-Epaisseur = %i mm\n\tType de bois : Hetre\n", p1.la, p1.lo, p1.e); break;
+    default:
+        break;
+    }
+    return 0;
+}
